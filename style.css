@@ -636,3 +636,97 @@ body {
         margin-top: 8px !important;
     }
 }
+
+/* ==========================================================================
+   MOBILE RESPONSIVE OVERRIDES (Line 639)
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* Prevent side scrolling & fix viewport fitting */
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        padding: 5px !important;
+        margin: 0 !important;
+    }
+
+    .app-container,
+    .container,
+    .wrapper {
+        padding: 8px !important;
+        gap: 12px !important;
+    }
+
+    /* Convert multi-column layouts, grids & navigation to single vertical column */
+    .navbar,
+    .main-content,
+    .dashboard,
+    .workspace,
+    .grid-container,
+    .panel-group,
+    .row {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 auto !important;
+        padding: 10px 5px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Full-width Cards & Panels */
+    .panel,
+    .card,
+    .sidebar,
+    .chart-container,
+    .panel-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin-bottom: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* MRI Images & Heatmap Canvas Responsive Fitting */
+    .image-preview-container,
+    .upload-zone,
+    .canvas-container {
+        width: 100% !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    img,
+    canvas,
+    video,
+    svg {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    /* Mobile Touch Friendly Full-Width Buttons */
+    button,
+    .btn,
+    input[type="button"],
+    input[type="submit"] {
+        width: 100% !important;
+        padding: 12px !important;
+        margin-top: 8px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Data Tables & Dynamic PDF Output Overflow scroll */
+    table,
+    .table-responsive {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+    }
+}
