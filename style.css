@@ -563,3 +563,76 @@ body {
     border-radius: 20px;
     margin-bottom: 12px;
 }
+
+/* ===================================================
+   Mobile Responsive Adjustments for Cyber-AI Workstation
+   =================================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* Prevent horizontal scrolling */
+    html,
+    body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        padding: 5px !important;
+        margin: 0 !important;
+    }
+
+    /* Convert grid/flex side-by-side layouts to single column */
+    .container,
+    .dashboard,
+    .workspace,
+    .main-content,
+    .grid-container,
+    .panel-group {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 auto !important;
+        padding: 10px 5px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Adjust cards, sidebars, and control panels */
+    .sidebar,
+    .panel,
+    .card,
+    .chart-container,
+    .image-preview {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin-bottom: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Ensure MRI canvases and preview images scale properly */
+    img,
+    canvas,
+    video {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Adjust typography for smaller mobile screens */
+    h1,
+    .title {
+        font-size: 1.5rem !important;
+    }
+
+    h2,
+    h3 {
+        font-size: 1.2rem !important;
+    }
+
+    /* Full-width buttons for touch interface */
+    button,
+    .btn {
+        width: 100% !important;
+        padding: 12px !important;
+        margin-top: 8px !important;
+    }
+}
