@@ -1,0 +1,24 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+env/
+venv/
+ENV/
+
+# Model weights & Large datasets (Google Drive link README me de sakte hain)
+*.pth
+*.pt
+data_extracted/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+*.zip
+*.pth
+*.pt
+__pycache__/
+data_extracted/

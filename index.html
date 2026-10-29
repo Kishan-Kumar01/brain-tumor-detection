@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainSpark Laboratory | Cyber-AI Workstation</title>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Core JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Sci-Fi Dynamic Lighting & Grid Overlays -->
+    <div class="cyber-grid"></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <div class="app-container">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-box">
+                    <svg class="tech-logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M32 6C17.6 6 6 17.6 6 32C6 46.4 17.6 58 32 58C46.4 58 58 46.4 58 32C58 17.6 46.4 6 32 6Z"
+                            stroke="#00f3ff" stroke-width="2" stroke-dasharray="4 4" class="spin-ring" />
+                        <path
+                            d="M22 24C22 19.5817 25.5817 16 30 16C33.5 16 36.5 18 37.5 21C39 20 41 20 42.5 21.5C44 23 44 25.5 43 27C45 28.5 45.5 31.5 44.5 33.5C46 35.5 45.5 38.5 43.5 40C43.5 43.5 41 46 37.5 46C35 46 33 45 32 43.5C31 45 29 46 26.5 46C23 46 20.5 43.5 20.5 40C18.5 38.5 18 35.5 19.5 33.5C18.5 31.5 19 28.5 21 27C20 25.5 20 23 21.5 21.5C22 21 22 24 22 24Z"
+                            stroke="#00f3ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="32" cy="32" r="3" fill="#ff0055" class="pulse-core" />
+                        <line x1="32" y1="16" x2="32" y2="46" stroke="#00f3ff" stroke-opacity="0.5"
+                            stroke-width="1.5" />
+                        <line x1="20" y1="32" x2="44" y2="32" stroke="#00f3ff" stroke-opacity="0.5"
+                            stroke-width="1.5" />
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h2 class="cyber-title">BrainSpark</h2>
+                    <span class="cyber-sub">NEURAL AI LAB</span>
+                </div>
+            </div>
+
+            <!-- Module Navigation Menu -->
+            <nav class="nav-menu">
+                <button class="nav-item active" onclick="switchTab('upload')">
+                    <span class="nav-glitch">01. UPLOAD SCAN</span>
+                </button>
+                <button class="nav-item" onclick="switchTab('preprocess')">
+                    <span class="nav-glitch">02. PREPROCESSING</span>
+                </button>
+                <button class="nav-item" onclick="switchTab('analytics')">
+                    <span class="nav-glitch">03. ANALYTICS & AT-NET</span>
+                </button>
+                <button class="nav-item" onclick="switchTab('report')">
+                    <span class="nav-glitch">04. CLINICAL REPORT</span>
+                </button>
+            </nav>
+
+            <!-- System Engine Status Footer -->
+            <div class="sidebar-footer">
+                <div class="model-badge">
+                    <span class="status-dot-pulse"></span>
+                    <span class="cyber-status">AT-NET ENGINE ONLINE</span>
+                </div>
+                <p class="institution">Galgotias University • 2026-27</p>
+            </div>
+        </aside>
+
+        <!-- Workstation Main Workspace -->
+        <main class="content-area">
+
+            <!-- System Telemetry & HUD Bar -->
+            <header class="top-header">
+                <div>
+                    <h1 id="page-title" class="glitch-text">Brain Tumour MRI Analysis Workstation</h1>
+                    <p class="subtitle">Multi-Task Attention-Guided Transformer Framework</p>
+                </div>
+                <div class="system-hud">
+                    <span class="hud-item"><i class="hud-dot"></i> SYS STATUS: OPTIMAL</span>
+                    <span class="hud-item">LATENCY: 12ms</span>
+                </div>
+            </header>
+
+            <!-- TAB 1: UPLOAD SCAN -->
+            <section id="tab-upload" class="tab-content active">
+                <div class="upload-card">
+                    <div class="drop-zone cyber-border" id="drop-zone">
+                        <div class="laser-scanner"></div>
+                        <div class="upload-icon-wrapper">
+                            <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#00f3ff"
+                                stroke-width="1.5">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="17 8 12 3 7 8" />
+                                <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+                        </div>
+                        <h3 class="cyber-heading">Drag & Drop Neural Scans</h3>
+                        <p class="cyber-subtext">Supports NIfTI (.nii, .nii.gz), DICOM (.dcm), PNG, JPG</p>
+                        <input type="file" id="file-input" hidden accept=".nii,.gz,.dcm,.png,.jpg,.jpeg">
+                        <button class="btn-cyber" onclick="document.getElementById('file-input').click()">Browse System
+                            Files</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: PREPROCESSING -->
+            <section id="tab-preprocess" class="tab-content">
+                <div class="grid-2">
+                    <div class="panel cyber-panel">
+                        <h3 class="panel-title">Pipeline Matrix Controls</h3>
+                        <div class="toggle-group">
+                            <label class="switch-label">
+                                <input type="checkbox" id="chk-bias" checked>
+                                <span>N4 Bias-Field Correction</span>
+                            </label>
+                            <label class="switch-label">
+                                <input type="checkbox" id="chk-skull" checked>
+                                <span>Skull Stripping (BET)</span>
+                            </label>
+                            <label class="switch-label">
+                                <input type="checkbox" id="chk-norm" checked>
+                                <span>Z-Score Normalisation</span>
+                            </label>
+                        </div>
+                        <button class="btn-cyber full-width" onclick="runPreprocessing()">INITIALISE PIPELINE</button>
+                    </div>
+
+                    <div class="panel cyber-panel">
+                        <h3 class="panel-title">Console Output Stream</h3>
+                        <div class="console-box" id="console-log">
+                            <p>[INFO] Neural Core Ready. Awaiting Input Matrix...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 3: ANALYTICS & AT-NET PREDICTION -->
+            <section id="tab-analytics" class="tab-content">
+                <div class="metrics-summary">
+                    <div class="metric-card cyber-card">
+                        <span>PREDICTED DIAGNOSIS</span>
+                        <h2 id="res-class" class="neon-cyan">---</h2>
+                    </div>
+                    <div class="metric-card cyber-card">
+                        <span>ACCURACY</span>
+                        <h2 id="res-acc" class="neon-pink">---</h2>
+                    </div>
+                    <div class="metric-card cyber-card">
+                        <span>PRECISION SCORE</span>
+                        <h2 id="res-prec" class="neon-green">---</h2>
+                    </div>
+                    <div class="metric-card cyber-card">
+                        <span>WHOLE TUMOUR DICE SIMILARITY COEFFICIENT (DSC)</span>
+                        <h2 id="res-dsc" class="neon-amber">---</h2>
+                    </div>
+                </div>
+            
+                <div class="grid-3">
+                    <div class="panel cyber-panel">
+                        <h3 class="panel-title">Raw Input Frame</h3>
+                        <div class="viewer-container">
+                            <canvas id="canvas-orig"></canvas>
+                        </div>
+                    </div>
+            
+                    <div class="panel cyber-panel">
+                        <h3 class="panel-title">AT-Net Tissue Segmentation</h3>
+                        <div class="viewer-container">
+                            <canvas id="canvas-mask"></canvas>
+                        </div>
+                        <div class="legend">
+                            <span class="dot cyan"></span> Core
+                            <span class="dot amber"></span> Oedema
+                            <span class="dot pink"></span> Enhancing
+                        </div>
+                    </div>
+            
+                    <div class="panel cyber-panel">
+                        <h3 class="panel-title">Attention Heatmap Matrix</h3>
+                        <div class="viewer-container">
+                            <canvas id="canvas-overlay"></canvas>
+                        </div>
+                        <label class="slider-label">
+                            Overlay Opacity:
+                            <input type="range" id="opacity-slider" min="0" max="1" step="0.05" value="0.45"
+                                oninput="updateOverlayOpacity()">
+                        </label>
+                    </div>
+                </div>
+            
+            <div class="panel cyber-panel style-margin-top">
+                <h3 class="panel-title">Class Confidence Spectrum</h3>
+                <div class="chart-wrapper" style="position: relative; height: 260px; width: 100%; overflow: hidden;">
+                    <canvas id="chart-probabilities"></canvas>
+                </div>
+            </div>
+            </section>
+
+            <!-- TAB 4: CLINICAL REPORT EXPORT -->
+            <section id="tab-report" class="tab-content">
+                <div class="panel cyber-panel text-center">
+                    <div class="badge-success">ANALYSIS CONCLUDED</div>
+                    <h2>Generate Cyber-Clinical Diagnostic Report</h2>
+                    <p>Download structured PDF research report compiled under <strong>BrainSpark Laboratory</strong>
+                        system specifications.</p>
+
+                    <div class="btn-group-center">
+                        <button class="btn-cyber" onclick="generatePDFReport()">Download PDF Report</button>
+                        <button class="btn-secondary-cyber" onclick="exportCSV()">Export Raw Data (CSV)</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Main Workstation JavaScript File -->
+    <script src="script.js"></script>
+</body>
+
+</html>
